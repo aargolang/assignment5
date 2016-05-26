@@ -27,21 +27,18 @@ LinkedList::~LinkedList()
 
 void LinkedList::AddLinkToBack(void* ptr)
 {
-	if(listLen_ == 0)
-        {
-                first_ = last_ = ((Node*)ptr);
-        }
-
-        else
-        {
-		Node* Nptr = first_;
-                while(Nptr->next_ != NULL)
-                {
-                       Nptr = Nptr->next_;
-                }
-                Nptr->next_ = last_ = ((Node*)ptr);
-        }
-        listLen_++;	
+	Node * newNode = new Node();
+	newNode->data1_ = ptr;
+	if (listLen_ == 0){
+		first_ = newNode;
+		last_ = newNode;
+	}
+	else{
+		last_->next_ = newNode;
+		//newNode->prev_ = last_;
+		last_ = newNode;
+	}
+	listLen_++;
 }
 
 

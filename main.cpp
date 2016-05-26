@@ -171,9 +171,11 @@ void readUserFile(LinkedList & userList)
 	userFile.open("userFile.txt");
 	// load users into user linked list omitting names shorter than 4 characters
 	cout << "* current users *" << endl; // debug
-	while (!userFile.eof()) {
+	while (!userFile.eof()) 
+	{
 		userFile.getline(userNM, MAX_SZ, '\n');
-		if (strlen(userNM) > 2){
+		if (strlen(userNM) > 2)
+		{
 			cout << userNM << endl; // debug
 			tempUser = new User();
 			tempUser->SetUserName(userNM);

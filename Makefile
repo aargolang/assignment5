@@ -1,4 +1,4 @@
-OBJS = main.o user.o linkedList.o
+OBJS = main.o user.o linkedList.o book.o
 CC = g++
 CPPFLAGS = -Wall -c -g -std=c++11
 LFLAGS = -Wall -g
@@ -14,6 +14,9 @@ likedList.o: linkedList.cpp linkedList.h
 
 user.o: user.cpp user.h
 	$(CC) $(CPPFLAGS) user.cpp
+
+book.o: book.cpp book.h
+	$(CC) $(CPPFLAGS) book.cpp
 
 clean: 
 	rm -f *.o 
